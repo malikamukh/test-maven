@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 public class BasicMethodsSelenium {
 
-    public class BasicMethods {
+
 
         @Test
         public void basics(){
@@ -14,8 +14,9 @@ public class BasicMethodsSelenium {
             Assert.assertEquals(currentUrl, "https://www.tesla.com/)");
 
             String pageSource = driver.getPageSource();
-            System.out.println(pageSource);
+           // System.out.println(pageSource);
             String text = "Until March 2023, new Model 3 and Model Y vehicles qualify for a $7,500 federal tax credit for eligible buyers";
-        }
+
+            Assert.assertTrue(pageSource.contains(text));
     }
 }
